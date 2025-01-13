@@ -18,7 +18,7 @@ public class EmailGeneratorServiceImpl implements EmailGeneratorService {
     @Value("${GEMINI-api-url}")
     private String apiUrl;
 
-    private WebClient webClient;
+    private final WebClient webClient;
     public EmailGeneratorServiceImpl(WebClient.Builder webClientBuilder){
         this.webClient = webClientBuilder.build();
     }

@@ -15,12 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/email")
 public class EmailGeneratorController {
 
-    @Autowired
-    private EmailGeneratorService emailGeneratorService;
+    private final EmailGeneratorService emailGeneratorService;
+
+    public EmailGeneratorController(EmailGeneratorService emailGeneratorService){
+        this.emailGeneratorService= emailGeneratorService;
+    }
 
     @PostMapping("/generate")
     public ResponseEntity<String> generateEmail(@RequestBody EmailRequest emailRequest){
-        System.out.println("Here.....");
         String response= emailGeneratorService.generateEmailReply(emailRequest);
 
         return ResponseEntity.ok(response);
