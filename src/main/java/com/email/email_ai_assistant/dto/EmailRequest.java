@@ -1,8 +1,5 @@
 package com.email.email_ai_assistant.dto;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 public class EmailRequest {
     public String getEmailContent() {
